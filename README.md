@@ -1,5 +1,5 @@
-个人vim配置
+# vim配置
 
-1. 复制`_vimrc`文件到合适的目录下
-2. 如果是Mac系统，需要改成`.vimrc`
-3. 复制`config.sh`文件到`bundle/`文件夹下运行安装（确保已经安装`git`命令）
+1. 复制`_vimrc`文件到合适的目录下，如果是Mac系统，需要将文件名改成`.vimrc`
+2. 复制`autoload`、`colors`和`bundle`文件夹到vim的根目录下
+3. 进入`bundle`文件夹，运行`config.sh`开始安装插件（确保已经安装`git`命令）
