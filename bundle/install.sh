@@ -2,7 +2,6 @@
 
 git clone https://github.com/jiangmiao/auto-pairs
 git clone https://github.com/haya14busa/incsearch.vim
-git clone https://github.com/easymotion/vim-easymotion
 git clone https://github.com/pangloss/vim-javascript
 git clone https://github.com/jistr/vim-nerdtree-tabs
 git clone https://github.com/kien/ctrlp.vim
