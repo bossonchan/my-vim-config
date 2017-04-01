@@ -31,8 +31,9 @@ endfunction
 syntax enable
 set number
 set nobackup
-set sw=2
-set ts=2
+set noundofile
+set sw=4
+set ts=4
 set expandtab
 set ai
 set hls
@@ -95,7 +96,7 @@ let g:nerdtree_tabs_startup_cd=1
 let g:airline_section_b = '%{fugitive#statusline()}'
 let g:airline_powerline_fonts = 1
 " 设置consolas字体"
-set guifont=Consolas\ for\ Powerline\ FixedD:h15
+set guifont=Consolas\ for\ Powerline\ FixedD:h12
 " 设置状态栏符号显示，下面编码用双引号"
 let g:Powerline_symbols="fancy"
 let g:airline_symbols = {}
