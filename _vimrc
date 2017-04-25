@@ -39,11 +39,15 @@ set ai
 set hls
 set ic
 set cursorline
-set cursorcolumn
 set nowrap
 set vb t_vb=
 set mouse=a
 set novb
+set noshelltemp
+set tags=ctags
+
+" 隐藏边框
+autocmd GUIEnter * hi VertSplit guifg=bg guibg=NONE gui=NONE
 
 " 全屏，去掉工具栏
 set guioptions-=m
@@ -64,7 +68,11 @@ language messages zh_CN.utf-8
 au BufNewFile,BufRead *.ypp set filetype=yacc
 
 execute pathogen#infect()
+syntax on
 filetype plugin indent on
+
+" tagbar
+nmap <F8> :TagbarToggle<CR> 
 
 " Molokai
 let g:rehash256=1
@@ -91,6 +99,7 @@ let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_autoclose=1
 let g:nerdtree_tabs_smart_startup_focus=2
 let g:nerdtree_tabs_startup_cd=1
+let g:NERDTreeWinSize = 40
 
 " airline
 let g:airline_section_b = '%{fugitive#statusline()}'
@@ -114,12 +123,11 @@ let g:airline#extensions#tabline#left_alt_sep = "\u2b81"
 " ctrlp
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-set wildignore+=*.so,*.swp,*.zip,*.class,*\\tmp\\*,*.exe
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn|node_modules)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
+if exists("g:ctrlp_user_command")
+    unlet g:ctrlp_user_command
+endif
+set wildignore+=*\\node_modules\\**,*\\dist\\**,*\\tmp\\**,*.so,*.swp,*.zip,*.class,*.exe,*.msi
+" set wildignore+=*/node_modules/**,*/dist/**,*/tmp/**,*.so,*.swp,*.zip,*.class,*.exe,*.msi
 
 " gitgutter
 let g:gitgutter_override_sign_column_highlight = 1
